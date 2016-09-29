@@ -1,0 +1,22 @@
+{
+  "name": "data-structures",
+  "version": "0.0.1",
+  "description": "Data structures for javascript.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "pretest": "tsc test/Heap.ts --module commonjs",
+    "test": "mocha"
+  },
+  "author": "Brian Folts",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "typescript": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0"
+  }
+}

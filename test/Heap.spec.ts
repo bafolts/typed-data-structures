@@ -1,14 +1,16 @@
 
-import {assert} from "chai";
 import {Heap} from "../src/Heap";
+
+declare var document;
+declare var Mediator;
 
 describe("Heap", () => {
 
     it("should know if empty", () => {
         let heap: Heap<number> = new Heap<number>();
-        assert.isOk(heap.empty(), "heap is empty upon creation");
+        expect(heap.empty()).toEqual(true);
         heap.add(1);
-        assert.isNotOk(heap.empty(), "heap is not empty, has one item");
+        expect(heap.empty()).not.toEqual(true);
     });
 
 });

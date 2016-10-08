@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>typed-data-structures | typed-data-structures</title>
+	<title>BinaryHeap | typed-data-structures</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -909,49 +909,638 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="classes/binaryheap.html" class="tsd-kind-icon">Binary<wbr>Heap</a>
+		<li class="current tsd-kind-class tsd-has-type-parameter">
+			<a href="binaryheap.html" class="tsd-kind-icon">Binary<wbr>Heap</a>
+			<ul>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="binaryheap.html#constructor" class="tsd-kind-icon">constructor</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#capacity" class="tsd-kind-icon">capacity</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#isminheap" class="tsd-kind-icon">is<wbr>Min<wbr>Heap</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#storage" class="tsd-kind-icon">storage</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#clear" class="tsd-kind-icon">clear</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#compare" class="tsd-kind-icon">compare</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#insert" class="tsd-kind-icon">insert</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#isfull" class="tsd-kind-icon">is<wbr>Full</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#peek" class="tsd-kind-icon">peek</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#remove" class="tsd-kind-icon">remove</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#sink" class="tsd-kind-icon">sink</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#size" class="tsd-kind-icon">size</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#swap" class="tsd-kind-icon">swap</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#swim" class="tsd-kind-icon">swim</a>
+				</li>
+				<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#comparator" class="tsd-kind-icon">comparator</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-			<a href="interfaces/comparator.html" class="tsd-kind-icon">Comparator</a>
+			<a href="../interfaces/comparator.html" class="tsd-kind-icon">Comparator</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<p><a href="https://travis-ci.org/bafolts/typed-data-structures"><img src="https://travis-ci.org/bafolts/typed-data-structures.svg?branch=master" alt="Build Status"></a>
-			<a href="https://coveralls.io/github/bafolts/typed-data-structures?branch=master"><img src="https://coveralls.io/repos/github/bafolts/typed-data-structures/badge.svg?branch=master" alt="Coverage Status"></a></p>
-			<p>[documentation] (<a href="https://bafolts.github.io/typed-data-structures/">https://bafolts.github.io/typed-data-structures/</a>)</p>
-			<h1 id="typed-data-structures">typed-data-structures</h1>
-			<p>Data structures for TypeScript. The goal of this project is to provide data structures for javascript. This project utilizes typescript in order to create type safe data structures. The generated classes can be used just as well in javascript.</p>
-			<h2 id="provided-structures">Provided Structures</h2>
-			<h3 id="binary-heap-priority-queue-">Binary Heap (Priority Queue)</h3>
-			<pre><code>import {<span class="hljs-keyword">BinaryHeap} </span>from <span class="hljs-string">"typed-data-structures/dist/BinaryHeap"</span><span class="hljs-comment">;</span>
-
-let heap: <span class="hljs-keyword">BinaryHeap&lt;number&gt; </span>= new <span class="hljs-keyword">BinaryHeap&lt;number&gt;();
-</span>heap.<span class="hljs-keyword">insert(1);
-</span>heap.<span class="hljs-keyword">insert(2);
-</span>heap.peek()<span class="hljs-comment">; // now equals 1</span>
-</code></pre>
 		</div>
+		<section class="tsd-panel tsd-type-parameters">
+			<h3>Type parameters</h3>
+			<ul class="tsd-type-parameters">
+				<li>
+					<h4>T</h4>
+				</li>
+			</ul>
+		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">BinaryHeap</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Classes</h3>
+						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/binaryheap.html" class="tsd-kind-icon">Binary<wbr>Heap</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="binaryheap.html#constructor" class="tsd-kind-icon">constructor</a></li>
 						</ul>
 					</section>
-					<section class="tsd-index-section tsd-is-external">
-						<h3>Interfaces</h3>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface tsd-has-type-parameter tsd-is-external"><a href="interfaces/comparator.html" class="tsd-kind-icon">Comparator</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#capacity" class="tsd-kind-icon">capacity</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#isminheap" class="tsd-kind-icon">is<wbr>Min<wbr>Heap</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#storage" class="tsd-kind-icon">storage</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Methods</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#clear" class="tsd-kind-icon">clear</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#compare" class="tsd-kind-icon">compare</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#insert" class="tsd-kind-icon">insert</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#isfull" class="tsd-kind-icon">is<wbr>Full</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#peek" class="tsd-kind-icon">peek</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#remove" class="tsd-kind-icon">remove</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#sink" class="tsd-kind-icon">sink</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#size" class="tsd-kind-icon">size</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#swap" class="tsd-kind-icon">swap</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#swim" class="tsd-kind-icon">swim</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Object literals</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#comparator" class="tsd-kind-icon">comparator</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>isMinHeap<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>isMinHeap<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, comparator<span class="tsd-signature-symbol">: </span><a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>comparator<span class="tsd-signature-symbol">: </span><a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>capacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>capacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isMinHeap<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>capacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isMinHeap<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, comparator<span class="tsd-signature-symbol">: </span><a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Binary<wbr>Heap<span class="tsd-signature-symbol">(</span>capacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, comparator<span class="tsd-signature-symbol">: </span><a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L11">BinaryHeap.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new minimum binary heap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L16">BinaryHeap.ts:16</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new minimum or maximum binary heap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>isMinHeap: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L21">BinaryHeap.ts:21</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new BinaryHeap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>isMinHeap: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li>
+								<h5>comparator: <a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L26">BinaryHeap.ts:26</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new BinaryHeap that will use the given comparator to order it&#39;s elements.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>comparator: <a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L31">BinaryHeap.ts:31</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new minimum binary heap with the specified initial capacity.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>capacity: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L36">BinaryHeap.ts:36</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new minimum or maximum binary heap with the specified initial capacity.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>capacity: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>isMinHeap: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L41">BinaryHeap.ts:41</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new BinaryHeap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>capacity: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>isMinHeap: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li>
+								<h5>comparator: <a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L46">BinaryHeap.ts:46</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Constructs a new BinaryHeap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>capacity: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>comparator: <a href="../interfaces/comparator.html" class="tsd-signature-type">Comparator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="binaryheap.html" class="tsd-signature-type">BinaryHeap</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="capacity" class="tsd-anchor"></a>
+				<h3>capacity</h3>
+				<div class="tsd-signature tsd-kind-icon">capacity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;Number.MAX_VALUE</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L8">BinaryHeap.ts:8</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="isminheap" class="tsd-anchor"></a>
+				<h3>is<wbr>Min<wbr>Heap</h3>
+				<div class="tsd-signature tsd-kind-icon">is<wbr>Min<wbr>Heap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L7">BinaryHeap.ts:7</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="storage" class="tsd-anchor"></a>
+				<h3>storage</h3>
+				<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[undefined]</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L6">BinaryHeap.ts:6</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="clear" class="tsd-anchor"></a>
+				<h3>clear</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L78">BinaryHeap.ts:78</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Clears all elements from queue.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="compare" class="tsd-anchor"></a>
+				<h3>compare</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">(</span>index1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, index2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L137">BinaryHeap.ts:137</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index1: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>index2: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="insert" class="tsd-anchor"></a>
+				<h3>insert</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L109">BinaryHeap.ts:109</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Inserts an element into queue.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>item: <span class="tsd-signature-type">T</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="isempty" class="tsd-anchor"></a>
+				<h3>is<wbr>Empty</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L95">BinaryHeap.ts:95</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Tests if queue is empty.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="isfull" class="tsd-anchor"></a>
+				<h3>is<wbr>Full</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Full<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L102">BinaryHeap.ts:102</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Tests if queue is full.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="peek" class="tsd-anchor"></a>
+				<h3>peek</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">peek<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L85">BinaryHeap.ts:85</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns the element on top of heap but don&#39;t remove it.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="remove" class="tsd-anchor"></a>
+				<h3>remove</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L120">BinaryHeap.ts:120</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Removes the priority element.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="sink" class="tsd-anchor"></a>
+				<h3>sink</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">sink<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L146">BinaryHeap.ts:146</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="size" class="tsd-anchor"></a>
+				<h3>size</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L133">BinaryHeap.ts:133</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns the number of elements in this heap.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="swap" class="tsd-anchor"></a>
+				<h3>swap</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>index1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, index2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L164">BinaryHeap.ts:164</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index1: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>index2: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="swim" class="tsd-anchor"></a>
+				<h3>swim</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">swim<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L170">BinaryHeap.ts:170</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Object literals</h2>
+			<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+				<a name="comparator" class="tsd-anchor"></a>
+				<h3>comparator</h3>
+				<div class="tsd-signature tsd-kind-icon">comparator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L9">BinaryHeap.ts:9</a></li>
+					</ul>
+				</aside>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
+					<a name="comparator.compare-1" class="tsd-anchor"></a>
+					<h3>compare</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal">
+						<li class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">(</span>item1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, item2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bafolts/typed-data-structures/blob/1855a80/src/BinaryHeap.ts#L10">BinaryHeap.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item1: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>item2: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

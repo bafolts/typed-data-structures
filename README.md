@@ -8,7 +8,7 @@ Data structures for TypeScript. The goal of this project is to provide data stru
 
 ## Provided Structures
 
-### Binary Heap (https://bafolts.github.io/typed-data-structures/classes/binaryheap.html)
+### [Binary Heap] (https://bafolts.github.io/typed-data-structures/classes/binaryheap.html)
 
 ```
 import {BinaryHeap} from "typed-data-structures/dist/BinaryHeap";

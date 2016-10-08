@@ -1,5 +1,5 @@
 {
-  "name": "data-structures",
+  "name": "typed-data-structures",
   "version": "0.0.1",
   "description": "Data structures for javascript.",
   "main": "index.js",

@@ -1,6 +1,7 @@
 
 import {expect} from "chai";
 import {BinaryHeap} from "../src/BinaryHeap";
+import {Comparator} from "../src/Comparator";
 
 describe("BinaryHeap", () => {
 
@@ -26,6 +27,60 @@ describe("BinaryHeap", () => {
         expect(heap.remove()).to.equal(7);
         expect(heap.remove()).to.equal(8);
         expect(heap.remove()).to.equal(9);
+        expect(heap.remove.bind(heap)).to.throw(Error);
+        expect(heap.size()).to.equal(0);
+    });
+
+    it("should have capacity", () => {
+        let heap: BinaryHeap<number> = new BinaryHeap<number>(0);
+        expect(heap.insert.bind(heap, 1)).to.throw(Error);
+        heap = new BinaryHeap<number>(1);
+        heap.insert(1);
+        expect(heap.insert.bind(heap, 1)).to.throw(Error);
+        expect(heap.peek()).to.equal(1);
+        expect(heap.remove()).to.equal(1);
+        expect(heap.peek.bind(heap)).to.throw(Error);
+        heap.insert(1);
+        heap.clear();
+        expect(heap.size()).to.equal(0);
+    });
+
+    it("should use capacity and max", () => {
+        let heap: BinaryHeap<number> = new BinaryHeap<number>(2, false);
+        heap.insert(1);
+        heap.insert(2);
+        expect(heap.peek()).to.equal(2);
+    });
+
+    it("should use max", () => {
+        let heap: BinaryHeap<number> = new BinaryHeap<number>(false);
+        heap.insert(1);
+        heap.insert(10);
+        expect(heap.peek()).to.equal(10);
+    });
+
+    it("should use comparator", () => {
+        const maxComparator: Comparator<number> = {
+            compare: (item1: number, item2: number): number => {
+                return item2 - item1;
+            }
+        };
+        let heap: BinaryHeap<number> = new BinaryHeap<number>(maxComparator);
+        heap.insert(1);
+        heap.insert(2);
+        expect(heap.peek()).to.equal(2);
+        heap = new BinaryHeap<number>(true, maxComparator);
+        heap.insert(1);
+        heap.insert(2);
+        expect(heap.peek()).to.equal(2);
+        heap = new BinaryHeap<number>(2, true, maxComparator);
+        heap.insert(1);
+        heap.insert(2);
+        expect(heap.peek()).to.equal(2);
+        heap = new BinaryHeap<number>(2, maxComparator);
+        heap.insert(1);
+        heap.insert(2);
+        expect(heap.peek()).to.equal(2);
     });
 
 });

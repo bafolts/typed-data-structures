@@ -134,15 +134,24 @@ export class BinaryHeap<T> {
         return this.storage.length - 1;
     }
 
+    private compare(index1: number, index2: number): boolean {
+        let result = this.comparator.compare(this.storage[index1], this.storage[index2]);
+        if (this.isMinHeap) {
+            return result < 0;
+        } else {
+            return result > 0;
+        }
+    }
+
     private sink(index: number): void {
         let left = index << 1;
         let right = left + 1;
         let N = this.storage.length;
         while (left < N) {
-            if (right < N && this.comparator.compare(this.storage[right], this.storage[left]) < 0 && this.comparator.compare(this.storage[right], this.storage[index]) < 0) {
+            if (right < N && this.compare(right, left) && this.compare(right, index)) {
                 this.swap(right, index);
                 index = right;
-            } else if (this.comparator.compare(this.storage[left], this.storage[index]) < 0) {
+            } else if (this.compare(left, index)) {
                 this.swap(left, index);
                 index = left;
             } else {
@@ -161,7 +170,7 @@ export class BinaryHeap<T> {
     private swim(index: number): void {
         while (index > 1) {
             let half = index >> 1;
-            if (this.comparator.compare(this.storage[index], this.storage[half]) < 0) {
+            if (this.compare(index, half)) {
                 this.swap(half, index);
                 index = half;
             } else {

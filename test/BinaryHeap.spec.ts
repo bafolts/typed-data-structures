@@ -1,21 +1,21 @@
 
 import {expect} from "chai";
-import {Heap} from "../src/Heap";
+import {BinaryHeap} from "../src/BinaryHeap";
 
-describe("Heap", () => {
+describe("BinaryHeap", () => {
 
     it("should know if empty", () => {
-        let heap: Heap<number> = new Heap<number>();
-        expect(heap.empty()).to.be.true;
-        heap.add(1);
-        expect(heap.empty()).to.be.false;
+        let heap: BinaryHeap<number> = new BinaryHeap<number>();
+        expect(heap.isEmpty()).to.be.true;
+        heap.insert(1);
+        expect(heap.isEmpty()).to.be.false;
     });
 
     it("should remove properly", () => {
-        let heap: Heap<number> = new Heap<number>();
+        let heap: BinaryHeap<number> = new BinaryHeap<number>();
         let a = [3, 6, 2, 9, 5, 8, 7, 0, 1];
         for (let i = 0; i < a.length; i++) {
-            heap.add(a[i]);
+            heap.insert(a[i]);
         }
         expect(heap.remove()).to.equal(0);
         expect(heap.remove()).to.equal(1);

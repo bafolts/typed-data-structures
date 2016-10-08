@@ -20,21 +20,27 @@ export class Heap<T> {
         if (this.empty()) {
             throw new Error("Empty Heap");
         }
-        this.swap(0, 1);
-        const res = this.storage.shift();
+        this.swap(1, this.storage.length - 1);
+        const res = this.storage.pop();
         this.sink(1);
         return res;
     }
 
     private sink(index: number): void {
-        const check = index * 2;
-        const check2 = check + 1;
-        if (check < this.storage.length && this.comparator(this.storage[index], this.storage[check])) {
-            this.swap(check, index);
-            this.sink(check);
-        } else if (check2 < this.storage.length && this.comparator(this.storage[index], this.storage[check2])) {
-            this.swap(check2, index);
-            this.sink(check2);
+        let left = index << 1;
+        let right = left + 1;
+        let N = this.storage.length;
+        while (left < N) {
+            if (right < N && this.comparator(this.storage[right], this.storage[left]) && this.comparator(this.storage[right], this.storage[index])) {
+                this.swap(right, index);
+                index = right;
+            } else if (this.comparator(this.storage[left], this.storage[index])) {
+                this.swap(left, index);
+                index = left;
+            } else {
+                break;
+            }
+            left = index << 1;
         }
     }
 
@@ -45,10 +51,14 @@ export class Heap<T> {
     }
 
     private swim(index: number): void {
-        const half = index / 2 | 0;
-        if (half > 0 && this.comparator(this.storage[half], this.storage[index])) {
-            this.swap(half, index);
-            this.swim(half);
+        while (index > 1) {
+            let half = index >> 1;
+            if (this.comparator(this.storage[index], this.storage[half])) {
+                this.swap(half, index);
+                index = half;
+            } else {
+                break;
+            }
         }
     }
 

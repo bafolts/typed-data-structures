@@ -16,5 +16,5 @@ import {BinaryHeap} from "typed-data-structures/dist/BinaryHeap";
 let heap: BinaryHeap<number> = new BinaryHeap<number>();
 heap.insert(1);
 heap.insert(2);
-heap.peak(); // now equals 1
+heap.peek(); // now equals 1
 ```
